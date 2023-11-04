@@ -21,10 +21,10 @@ public class array2 {
                 new int[2],
                 new int[5]
         };
-        for (int[] num: nums2) {
-            for (int n: num) {
-                System.out.print("Enter: ");
-                n = in.nextInt();
+        for (int[] num: nums2) {                    //for(int i = 0; i< nums2.length; i++){
+            for (int n: num) {                          //for(int j = 0; j< nums2[i].length; j++){
+                System.out.print("Enter: ");            // }
+                n = in.nextInt();                       //}
             }
             System.out.println();
         }
