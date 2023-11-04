@@ -13,5 +13,17 @@ public class array1 {
         System.out.println(Arrays.toString(STD));
         System.out.println(Arrays.toString(nullArray));
         System.out.println(Arrays.toString(str));
+
+        Integer a = 20; Integer b = 30;
+        System.out.println(a +" " + b);
+        swap(a, b);
+        System.out.println(a +" " + b);
+    }
+
+    public static void swap(Integer a, Integer b){
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println(a +" " + b);
     }
 }
