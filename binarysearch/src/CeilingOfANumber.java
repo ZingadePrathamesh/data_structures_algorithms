@@ -13,6 +13,7 @@ public class CeilingOfANumber {
         int start = 0;
         int end = nums.length-1;
         int mid;
+        if(nums.length == 0|| target>nums[end]) return -1;
         while(start <= end){
             mid = start + (end -start)/2;
             if(nums[mid] == target) return target;
@@ -30,6 +31,7 @@ public class CeilingOfANumber {
         int start = 0;
         int end = nums.length-1;
         int mid;
+        if(nums.length == 0|| target<nums[end]) return -1;
         while(start <= end){
             mid = start + (end -start)/2;
             if(nums[mid] == target) return target;
