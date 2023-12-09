@@ -1,23 +1,17 @@
 public class SearchInRotatedArray {
     public static void main(String[] args) {
-        int[] nums = { 5, 1, 3};
-        System.out.println(rotatedArray(nums, 5));
+        int[] nums = {1};
+        System.out.println(rotatedArray(nums, 1));
     }
 
     public static int rotatedArray(int[] nums, int target){
         int start = 0;
         int end = nums.length-1;
-        int mid; int high= 0;
-        while(start <end){
-            mid = start + (end - start)/2;
-            if(nums[mid] < nums[mid+1]) start = mid +1;
-            else end = mid;
-        }
-        high = start;
+        int mid;
+        int high = findPivot(nums);
+
         end = high;
         start = 0;
-        System.out.println(nums[high]);
-        if(nums[high] == target) return high;
 
         while(start <= end){
             mid = start + (end - start)/2;
@@ -41,4 +35,20 @@ public class SearchInRotatedArray {
         }
         return -1;
     }
+
+    public static int findPivot(int[] nums){
+        int start = 0;
+        int end = nums.length-1;
+        int mid;
+        while(start  <end){
+            mid = start + (end - start)/2;
+            if(mid < end && nums[mid]>nums[mid+1]) return mid;
+            if(mid > start && nums[mid]< nums[mid -1]) return mid-1;
+            if(nums[start]<=nums[mid]) start = mid + 1;
+            else end = mid -1;
+        }
+        return -1;
+    }
+
+
 }
