@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/arrayProblem/arrayProblem.iml" filepath="$PROJECT_DIR$/arrayProblem/arrayProblem.iml" />
       <module fileurl="file://$PROJECT_DIR$/array_0/array_0.iml" filepath="$PROJECT_DIR$/array_0/array_0.iml" />
       <module fileurl="file://$PROJECT_DIR$/binarysearch/binarysearch.iml" filepath="$PROJECT_DIR$/binarysearch/binarysearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/binarysearchin2d/binarysearchin2d.iml" filepath="$PROJECT_DIR$/binarysearchin2d/binarysearchin2d.iml" />
       <module fileurl="file://$PROJECT_DIR$/recursion-problems/recursion-problems.iml" filepath="$PROJECT_DIR$/recursion-problems/recursion-problems.iml" />
     </modules>
   </component>
