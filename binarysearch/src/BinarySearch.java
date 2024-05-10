@@ -6,9 +6,10 @@ import java.util.List;
 public class BinarySearch {
     public static void main(String[] args) {
         int nums[] = {12, 13, 14, 15, 16, 18, 20 , 22, 25, 27, 29, 32};
-        int target = 12;
+        int target = 183;
 
         System.out.println(binarySearch(nums, target));
+        System.out.println(binarySearchRevised(nums, target));
     }
 
 
@@ -71,5 +72,32 @@ public class BinarySearch {
             }
         }
         return -1;
+    }
+
+    public static int binarySearchRevised(int[] arr, int target){
+        int start =0;
+        int end = arr.length-1;
+        int mid = start + (end-start)/2;
+        if(arr.length == 0||arr == null){
+            System.out.println("Invalid Array");
+            return Integer.MAX_VALUE;
+        }
+        else{
+            while(start<=end){
+                if (arr[mid] == target){
+                    System.out.println("Target found at index: " + mid);
+                    return mid;
+                }
+                else if(arr[mid]>target){
+                    end = mid;
+                }
+                else{
+                    start = mid+1;
+                }
+                mid = start + (end -start)/2;
+            }
+            System.out.println("Target not found!");
+            return Integer.MAX_VALUE;
+        }
     }
 }
