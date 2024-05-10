@@ -7,6 +7,7 @@ public class linearSearch {
     public static void main(String[] args) {
         int[] nums={1,56,98,78,74,25,12,10,-70};
         System.out.println(minimumNumber(nums));
+        linearSearchRevised(nums, 74);
     }
 
     public static int linearSearching(int[] nums, int target){
@@ -44,4 +45,20 @@ public class linearSearch {
         return min;
     }
 
+    public static int linearSearchRevised(int[] arr, int targer){
+        if(arr.length == 0 || arr == null){
+            System.out.println("Invalid array");
+            return Integer.MAX_VALUE;
+        }
+        else{
+            for(int  i = 0; i<arr.length; i++) {
+                if (arr[i] == targer) {
+                    System.out.println("Found at index: " + i);
+                    return i;
+                }
+            }
+        }
+        System.out.println("Target not found!");
+        return Integer.MAX_VALUE;
+    }
 }

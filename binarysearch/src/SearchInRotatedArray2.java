@@ -2,12 +2,11 @@ public class SearchInRotatedArray2 {
 
     public static void main(String[] args) {
         int[] nums = {4,5,6,7,0,1,2};
-        int[] arr = {2,5,6,0,0,1,2};
+        int[] arr = {1, 0, 1, 1 ,1};
         System.out.println(searchPivot(arr));
+        System.out.println(searchInRotatedArray(arr, 0));
         int peak = searchPivot(nums);
         System.out.println(peak);
-        System.out.println(searchInRotatedArray(nums, 0, peak, 5));
-        System.out.println(searchInRotatedArray(nums, peak+1, nums.length-1, 5));
 
     }
 
@@ -23,8 +22,8 @@ public class SearchInRotatedArray2 {
             else if(mid > start && nums[mid]<nums[mid-1]){
                 return mid -1;
             }
-            else if(nums[start]> nums[mid]) end = mid -1;
-            else if(nums[start]<= nums[mid]) start = mid + 1;
+            else if(nums[start]>= nums[mid]) end = mid -1;
+            else if(nums[start]<nums[mid]) start = mid + 1;
         }
         return -1;
     }
