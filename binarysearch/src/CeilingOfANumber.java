@@ -10,6 +10,10 @@ public class CeilingOfANumber {
         System.out.println(linearCeilingOfNumber(nums2, 8 ));
         System.out.println(binaryCeilingOfNumber(nums2, 8));
         System.out.println(binaryFloorOfNumber(nums2, 15));
+        System.out.println();
+        System.out.println(binarySearchCeilingOfANumber(nums2, 2));
+        System.out.println(binarySearchFloorOfANumber(nums2, 14));
+        System.out.println(binarySearchFloorOfANumber(nums2, 2));
 
     }
 
@@ -88,4 +92,56 @@ public class CeilingOfANumber {
         }
         return -1;
     }
+
+    public static int binarySearchCeilingOfANumber(int arr[], int target){
+        if(arr == null || arr.length == 0){
+            System.out.println("Invalid array");
+            return Integer.MIN_VALUE;
+        }
+        else{
+            int start = 0;
+            int end = arr.length-1;
+            int mid = 0;
+            while(start<end){
+                mid = start + (end - start)/2;
+                if(arr[mid] == target){
+                    System.out.println("Found at " + mid);
+                    return arr[end];
+                }
+                else if(arr[mid]<target){
+                    start = mid +1;
+                }
+                else {
+                    end = mid;
+                }
+            }
+            return arr[end];
+        }
+    }
+    public static int binarySearchFloorOfANumber(int arr[], int target){
+        if(arr == null || arr.length == 0){
+            System.out.println("Invalid array");
+            return Integer.MIN_VALUE;
+        }
+        else{
+            int start = 0;
+            int end = arr.length-1;
+            int mid = 0;
+            while(start<end){
+                mid = start + (end - start)/2;
+                if(arr[mid] == target){
+                    System.out.println("Found at " + mid);
+                    return arr[mid];
+                }
+                else if(arr[mid]<target){
+                    start = mid +1;
+                }
+                else {
+                    end = mid;
+                }
+            }
+            return arr[mid];
+        }
+    }
+
 }
