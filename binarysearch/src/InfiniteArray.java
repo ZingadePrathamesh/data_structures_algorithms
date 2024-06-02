@@ -39,4 +39,24 @@ public class InfiniteArray {
         }
         return -1;
     }
+
+    public static int positionInInfiniteArray(int[] nums, int target){
+        if(nums == null) return Integer.MIN_VALUE;
+        else{
+            int start = 0;
+            int mid = 0; int end = 1;
+            while(nums[end] < target){
+                end *= 2; 
+            }
+            while(start <= end){
+                mid = start + (end - start)/2;
+                if(nums[mid] == target) return mid;
+                else if(nums[mid] < target) start = mid + 1;
+                else{
+                    end = mid - 1;
+                }
+            }
+            return Integer.MIN_VALUE;
+        }
+    }
 }
