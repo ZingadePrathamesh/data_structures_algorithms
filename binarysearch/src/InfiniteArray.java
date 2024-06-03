@@ -5,9 +5,10 @@ import java.util.Random;
 public class InfiniteArray {
     public static void main(String[] args) {
         int[] array = new int[1000];
+        int[] nums = {1, 2, 3 ,4,5 ,6,7 ,8, 9, 10};
 
         for(int i = 0; i<array.length; i++){
-            array[i] = i;
+            array[i] = i*2;
         }
 
         Arrays.sort(array);
@@ -15,6 +16,8 @@ public class InfiniteArray {
         System.out.println(Arrays.toString(array));
 
         System.out.println(positionOfNumber(array, 300));
+        System.out.println(positionInInfiniteArray(array, 500));
+        System.out.println(positionInInfiniteArray(nums, 8));
     }
 
     public static int positionOfNumber(int[] nums, int target){
@@ -46,6 +49,7 @@ public class InfiniteArray {
             int start = 0;
             int mid = 0; int end = 1;
             while(nums[end] < target){
+                start = end+1;
                 end *= 2; 
             }
             while(start <= end){
