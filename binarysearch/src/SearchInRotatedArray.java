@@ -9,6 +9,7 @@ public class SearchInRotatedArray {
         System.out.println(searchInRotatedArray(nums, 0, peak, 5));
         System.out.println(searchInRotatedArray(nums, peak+1, nums.length-1, 5));
 
+
     }
 
     public static int searchPivot(int[] nums){
