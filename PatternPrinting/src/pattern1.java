@@ -9,6 +9,7 @@ public class pattern1 {
         pattern5(5);
         pattern6(5);
         pattern7(5);
+        pattern8(4);
     }
 
     public static void pattern1(int n){
@@ -86,4 +87,16 @@ public class pattern1 {
             System.out.println();
         }
     }
+
+    public static void pattern8(int n ){
+        int N = 2*n-1;
+        for(int i = 0 ; i< N; i++){
+            for(int j = 0; j< N; j++){
+                int value = n-Math.min(Math.min(N-1-i, N-1-j),Math.min(i, j));
+                System.out.print(value+" ");
+            }
+            System.out.println();
+        }
+    }
+
 }
