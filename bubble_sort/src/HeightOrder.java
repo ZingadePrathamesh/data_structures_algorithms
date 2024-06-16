@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class HeightOrder {
     public int heightChecker(int[] heights) {
         ArrayList<Integer> expected = new ArrayList<Integer>();
