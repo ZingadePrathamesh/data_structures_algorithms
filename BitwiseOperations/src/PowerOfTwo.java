@@ -22,8 +22,7 @@ public class PowerOfTwo {
     }
 
     static boolean isPowerOfTwoOptimized(int num){
-        int countOfDigit = (int) (Math.log(num)/ Math.log(2));
-        int mask = ~(1<<countOfDigit);
-        return (num & mask) == 0;
+        if (num == 0) return false;
+        return (num & (num-1)) == 0;
     }
 }
