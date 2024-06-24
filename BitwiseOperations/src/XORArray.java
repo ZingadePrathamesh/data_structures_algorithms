@@ -2,6 +2,7 @@ public class XORArray {
     public static void main(String[] args) {
         System.out.println(xorOperationsTillN(10));
         System.out.println(xorOperationInRange(0, 10));
+        System.out.println(xorOperationInRange(1, 10));
     }
     public static int xorOperation(int n, int start) {
         int result = 0;
