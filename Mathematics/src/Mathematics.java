@@ -10,6 +10,8 @@ public class Mathematics {
             System.out.println(num + " : " + number);
         }
         System.out.println(Long.MAX_VALUE + " : " + isPrimeNumberOptimised(Long.MAX_VALUE));
+
+        printPrimeNumbersTillN(40);
     }
 
     /**
@@ -38,6 +40,20 @@ public class Mathematics {
 
         // If no factors are found, the number is prime
         return true;
+    }
+
+    public static void printPrimeNumbersTillN(int n){
+        boolean[] notPrime = new boolean[n + 1];
+        for(int i = 2; i*i <= n; i++){
+            if(!notPrime[i]) {
+                for(int j = 2; i*j <= n; j++) {
+                    notPrime[i * j] = true;
+                }
+            }
+        }
+        for(int i = 2; i< notPrime.length ; i++ ){
+            if(!notPrime[i]) System.out.println(i);
+        }
     }
 
 
