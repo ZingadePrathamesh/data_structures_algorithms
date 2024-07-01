@@ -12,6 +12,7 @@ public class Mathematics {
         System.out.println(Long.MAX_VALUE + " : " + isPrimeNumberOptimised(Long.MAX_VALUE));
 
         printPrimeNumbersTillN(40);
+        printPrimeNumbersInRange(20, 40);
     }
 
     /**
@@ -53,6 +54,38 @@ public class Mathematics {
         }
         for(int i = 2; i< notPrime.length ; i++ ){
             if(!notPrime[i]) System.out.println(i);
+        }
+    }
+
+    public static void printPrimeNumbersInRange(int start, int end){
+        boolean[] notPrime = new boolean[end+1];
+        notPrime[0] = true;
+        notPrime[1] = true;
+        int i = start;
+        while(start <= end){
+            if (start == 2 || start == 3){
+                notPrime[2] = false;
+                notPrime[3] = false;
+            }
+            else if(start % 2 == 0 || start % 3 == 0){
+                notPrime[start] = true;
+            }
+            else{
+                if(!notPrime[start]){
+                    for(int j =  5; j * j <= end; j+=6){
+                        if(start % j == 0 || start % (j+2) == 0){
+                            notPrime[start] = true;
+                        }
+                    }
+                }
+            }
+            start++;
+        }
+        while(i <= end){
+            if(!notPrime[i]){
+                System.out.println(i);
+            }
+            i++;
         }
     }
 
