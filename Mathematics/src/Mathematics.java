@@ -4,15 +4,23 @@ public class Mathematics {
                 2, 3, 5, 7, 11, 13, 17, 19, 23, 29,  // Prime numbers
                 4, 6, 8, 9, 10, 12, 14, 15, 16, 18   // Non-prime numbers
         };
+//
+//        for(int num: combinedArray){
+//            String number = isPrimeNumberOptimised((long) num)?"Prime":"Not Prime";
+//            System.out.println(num + " : " + number);
+//        }
+//        System.out.println(Long.MAX_VALUE + " : " + isPrimeNumberOptimised(Long.MAX_VALUE));
+//
+//        printPrimeNumbersTillN(40);
+//        printPrimeNumbersInRange(20, 40);
 
-        for(int num: combinedArray){
-            String number = isPrimeNumberOptimised((long) num)?"Prime":"Not Prime";
-            System.out.println(num + " : " + number);
+        for(int i =  1; i< 20 ; i++){
+            System.out.println(squareRoot(i*i, 2));
         }
-        System.out.println(Long.MAX_VALUE + " : " + isPrimeNumberOptimised(Long.MAX_VALUE));
+        System.out.println(squareRoot(40,2));
 
-        printPrimeNumbersTillN(40);
-        printPrimeNumbersInRange(20, 40);
+//        System.out.println(numberGenerator(10));
+//        System.out.println(numberGeneratorBetter(10));
     }
 
     /**
@@ -87,6 +95,62 @@ public class Mathematics {
             }
             i++;
         }
+    }
+
+    public static double squareRoot(int number, int precision){
+        int start = 0;
+        int end = number;
+        int mid = start + (end - start)/2;
+        while(start<=end){
+            mid = start + (end - start)/2;
+            if(mid * mid == number){
+                return mid;
+            }
+            else if(mid * mid > number){
+                end = mid -1;
+            }
+            else{
+                start = mid + 1;
+            }
+        }
+        double root = 0;
+        double increment = 0.1;
+        for(int i = 0 ; i< precision; i++){
+            while(root * root < number){
+                root += increment;
+            }
+            increment /= 10;
+        }
+        return root;
+    }
+
+    public static long numberGeneratorBetter(int digits){
+        int[] numbers = new int[digits];
+        for(int i =  0; i<digits; i++){
+            numbers[i] = (int) (Math.random()*10);
+        }
+        long number = 0;
+        for(int i: numbers){
+            number = number*10 + i;
+        }
+        return number;
+    }
+
+    public static long numberGenerator(int digit){
+        long generatedNumber = 0;
+        while(digitOfNumber(generatedNumber)< digit){
+            generatedNumber = generatedNumber*10 + (long) (Math.random()*10);
+        }
+        return generatedNumber;
+    }
+
+    public static int digitOfNumber(long number){
+        int count = 0;
+        while(number>0){
+            number/=10;
+            count++;
+        }
+        return count;
     }
 
 
