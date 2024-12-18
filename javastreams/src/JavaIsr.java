@@ -21,8 +21,8 @@ public class JavaIsr {
         catch (IOException ioException){
             System.out.println(ioException.getMessage());
         }
-
-        try(FileReader fileReader = new FileReader("output.txt")){
+        File file = new File("output.txt");
+        try(FileReader fileReader = new FileReader(file)){
             while(fileReader.ready()){
                 System.out.println((char) fileReader.read());
             }
