@@ -6,7 +6,8 @@ public class Part1 {
 //        inputStreamReaderEx();
 //        fileInputStreamEx();
 //        fileReaderEx();
-        bufferReaderEx();
+//        bufferReaderEx();
+        inputStreamEx();
     }
 
     public static void fileReaderEx(){
@@ -66,6 +67,18 @@ public class Part1 {
                 System.out.println(chars);
             }
         } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static void inputStreamEx(){
+        try(FileInputStream fileInputStream = new FileInputStream(new File("Filehandling/src/note.txt"))){
+            int letter = fileInputStream.read();
+            while (fileInputStream.available() > 0){
+                System.out.println((char) letter);
+                letter = fileInputStream.read();
+            }
+        }catch (IOException e){
             System.err.println(e.getMessage());
         }
     }
