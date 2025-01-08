@@ -4,9 +4,12 @@ import java.util.Arrays;
 public class InsertionSort {
     public static void main(String[] args) {
         int[] nums = {5,4,3,2,1};
-        System.out.println(Arrays.toString(nums));
-        optimizedInsertionSort(nums);
-        System.out.println(Arrays.toString(nums));
+        int[] nums2 = {5,4,3,2,1};
+//        System.out.println(Arrays.toString(nums));
+//        optimizedInsertionSort(nums);
+//        System.out.println(Arrays.toString(nums));
+        revisionInsertionSort(nums2);
+        System.out.println(Arrays.toString(nums2));
     }
     public static int[] insertionSort(int[] nums){
         for(int i = 0; i<nums.length -1; i++){
@@ -26,6 +29,19 @@ public class InsertionSort {
         int temp = nums[first];
         nums[first] = nums[second];
         nums[second] = temp;
+    }
+
+    public static void revisionInsertionSort(int[] arr){
+        if(arr == null || arr.length == 0) return ;
+        for(int i = 1; i < arr.length; i++){
+            int key = arr[i];
+            int j =  i-1;
+            while(j >= 0 && key < arr[j]){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = key;
+        }
     }
 
     public static int[] optimizedInsertionSort(int[] nums){

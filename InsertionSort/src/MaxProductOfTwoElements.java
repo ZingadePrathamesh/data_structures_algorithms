@@ -4,7 +4,9 @@ import java.util.Arrays;
 public class MaxProductOfTwoElements {
     public static void main(String[] args) {
         int[] nums ={3,4,5,2};
+        int[] nums2 = {-100,-2,-3,1};
         System.out.println(maxProductOptimized(nums));
+        System.out.println(maximumProduct(nums2));
     }
 
     public static int maxProductOptimized(int[] nums){
@@ -42,6 +44,13 @@ public class MaxProductOfTwoElements {
             int j = numsCopy.size()-2;
             return (numsCopy.get(i)-1) * (numsCopy.get(j)-1);
         }
+    }
 
+    public static int maximumProduct(int[] nums) {
+        InsertionSort.optimizedInsertionSort(nums);
+         int max1 = nums[0] * nums[1];
+         int max2 = nums[nums.length - 1] * nums[nums.length - 2];
+
+         return max1 > max2 ? max1: max2;
     }
 }
