@@ -5,6 +5,8 @@ public class Revision {
         System.out.println(sumOfDigit(12345));
         System.out.println(revNum(1203,0));
         System.out.println(prodNumber(123));
+//        System.out.println(palindrome(12321));
+        System.out.println(countZeros(1001, 0));
     }
 
     public static void printingReverseNumbers(int max){
@@ -42,5 +44,24 @@ public class Revision {
         else{
             return num%10 * prodNumber(num/10);
         }
+    }
+
+    public static boolean palindrome(int num){
+        return num == revNum(num, 0);
+    }
+
+    public static int countZeros(int num, int count){
+        if(num%10 == num){
+            return count;
+        }
+        else{
+            if(num % 10 == 0) count++;
+            return countZeros(num/10, count);
+        }
+    }
+
+    public static boolean amorphic(int num){
+        int a = (int) Math.sqrt(num);
+        return num % 10 ==  a % 10;
     }
 }
