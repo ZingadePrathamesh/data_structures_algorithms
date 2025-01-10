@@ -10,6 +10,7 @@ public class pattern1 {
         pattern6(5);
         pattern7(5);
         pattern8(4);
+        hollowTriangle(5);
     }
 
     public static void pattern1(int n){
@@ -99,4 +100,24 @@ public class pattern1 {
         }
     }
 
+    public static void hollowTriangle(int num){
+        for (int i = 0; i< num; i++){
+            for(int j = 0; j<=num*2; j++){
+                if(j == num - i || j == num + i){
+                    System.out.print("*");
+                }
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+        for(int i = num-1; i>=0; i--){
+            for(int j = 0; j<=num*2; j++){
+                if(j == num - i || j == num + i){
+                    System.out.print("*");
+                }
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
 }
