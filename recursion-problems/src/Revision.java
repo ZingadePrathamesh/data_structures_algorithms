@@ -7,6 +7,8 @@ public class Revision {
         System.out.println(prodNumber(123));
 //        System.out.println(palindrome(12321));
         System.out.println(countZeros(1001, 0));
+        System.out.println(numberOfSteps(40, 0));
+        System.out.println((int) Math.log10(759865) + 1);
     }
 
     public static void printingReverseNumbers(int max){
@@ -63,5 +65,12 @@ public class Revision {
     public static boolean amorphic(int num){
         int a = (int) Math.sqrt(num);
         return num % 10 ==  a % 10;
+    }
+
+    public static int numberOfSteps(int num, int steps){
+        if(num == 0) return steps;
+        else{
+            return numberOfSteps(--num, ++steps);
+        }
     }
 }
