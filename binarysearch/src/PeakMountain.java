@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 public class PeakMountain {
     public static void main(String[] args) {
         int[] arr = {3,5,3,2,0};
@@ -14,7 +12,7 @@ public class PeakMountain {
     }
 
 
-    public static int peakMountain(int @NotNull [] nums){
+    public static int peakMountain(int [] nums){
         int start = 0;
         int end = nums.length-1;
         int mid;

@@ -24,6 +24,7 @@ public class SearchInRotatedArray {
             else if(mid > start && nums[mid]<nums[mid-1]){
                 return mid -1;
             }
+//            else if(nums[end]>nums[start]) return end;
             else if(nums[start]> nums[mid]) end = mid -1;
             else if(nums[start]<= nums[mid]) start = mid + 1;
         }

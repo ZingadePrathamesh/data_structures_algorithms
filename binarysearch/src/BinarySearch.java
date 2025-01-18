@@ -1,8 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class BinarySearch {
     public static void main(String[] args) {
         int nums[] = {12, 13, 14, 15, 16, 18, 20 , 22, 25, 27, 29, 32};
@@ -49,7 +44,7 @@ public class BinarySearch {
         }
         return -1;
     }
-    public static int binarySearch(int @NotNull [] nums, int target){
+    public static int binarySearch(int[] nums, int target){
         if(nums.length == 0){
             System.out.println("Array is empty");
             return -1;
