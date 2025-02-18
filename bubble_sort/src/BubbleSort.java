@@ -19,12 +19,9 @@ public class BubbleSort {
         System.out.println(str2);
 
 
-
-
-
         int[] nums = {3, 1, 5, 4, 2};
         System.out.println(Arrays.toString(nums));
-        bubbleSort(nums);
+        bubbleSortRev(nums);
         System.out.println(Arrays.toString(nums));
 
     }
@@ -46,5 +43,24 @@ public class BubbleSort {
             if(!swapped) break;
             length--;
         }
+    }
+
+    public static void bubbleSortRev(int[] nums){
+        if(nums == null || nums.length == 0){
+            return;
+        }
+        int last = nums.length - 1;
+
+        for(int i = 0; i <= last; i++){
+            for(int j = 0; j < last - i; j++){
+                if(nums[j] > nums[j+1]) swap(nums, j, j+1);
+            }
+        }
+    }
+
+    public static void swap(int[] nums, int first, int second){
+        int temp = nums[first];
+        nums[first] = nums[second];
+        nums[second] = temp;
     }
 }
