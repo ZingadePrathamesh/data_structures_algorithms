@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class InsertionSort {
@@ -8,7 +7,7 @@ public class InsertionSort {
 //        System.out.println(Arrays.toString(nums));
 //        optimizedInsertionSort(nums);
 //        System.out.println(Arrays.toString(nums));
-        revisionInsertionSort(nums2);
+        insertionSortRev(nums2);
         System.out.println(Arrays.toString(nums2));
     }
     public static int[] insertionSort(int[] nums){
@@ -44,8 +43,10 @@ public class InsertionSort {
         }
     }
 
-    public static int[] optimizedInsertionSort(int[] nums){
-        if(nums.length == 0) return new int[0];
+    public static void optimizedInsertionSort(int[] nums){
+        if(nums.length == 0) {
+            return;
+        }
         else{
             for (int i = 1; i< nums.length; i++){
                 int key = nums[i];
@@ -56,8 +57,30 @@ public class InsertionSort {
                 }
                 nums[j+1] = key;
             }
-            return nums;
         }
     }
 
+    public static void insertionSortRev(int[] nums){
+        if(nums == null || nums.length == 0){
+            return ;
+        }
+        boolean flag = true;
+        for(int i = 0 ; i< nums.length - 1 ; i++){
+            if(nums[i] > nums[i+1]){
+                flag  = false;
+                break;
+            }
+        }
+        if(flag) return;
+
+        for(int i = 1; i < nums.length; i++){
+            int key = nums[i];
+            int j = i-1;
+            while(j >= 0 && nums[j] > key){
+                nums[j+1] = nums[j];
+                j--;
+            }
+            nums[j+1] = key;
+        }
+    }
 }
