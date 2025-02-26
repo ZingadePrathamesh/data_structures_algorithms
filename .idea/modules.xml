@@ -12,10 +12,12 @@
       <module fileurl="file://$PROJECT_DIR$/LinearSearch/LinearSearch.iml" filepath="$PROJECT_DIR$/LinearSearch/LinearSearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mathematics/Mathematics.iml" filepath="$PROJECT_DIR$/Mathematics/Mathematics.iml" />
       <module fileurl="file://$PROJECT_DIR$/MergeSort/MergeSort.iml" filepath="$PROJECT_DIR$/MergeSort/MergeSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiThreading/MultiThreading.iml" filepath="$PROJECT_DIR$/MultiThreading/MultiThreading.iml" />
       <module fileurl="file://$PROJECT_DIR$/PatternPrinting/PatternPrinting.iml" filepath="$PROJECT_DIR$/PatternPrinting/PatternPrinting.iml" />
       <module fileurl="file://$PROJECT_DIR$/QuickSort/QuickSort.iml" filepath="$PROJECT_DIR$/QuickSort/QuickSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/Recursion/Recursion.iml" filepath="$PROJECT_DIR$/Recursion/Recursion.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectionSort/SelectionSort.iml" filepath="$PROJECT_DIR$/SelectionSort/SelectionSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Strings/Strings.iml" filepath="$PROJECT_DIR$/Strings/Strings.iml" />
       <module fileurl="file://$PROJECT_DIR$/arrayProblem/arrayProblem.iml" filepath="$PROJECT_DIR$/arrayProblem/arrayProblem.iml" />
       <module fileurl="file://$PROJECT_DIR$/array_0/array_0.iml" filepath="$PROJECT_DIR$/array_0/array_0.iml" />
       <module fileurl="file://$PROJECT_DIR$/binarysearch/binarysearch.iml" filepath="$PROJECT_DIR$/binarysearch/binarysearch.iml" />
