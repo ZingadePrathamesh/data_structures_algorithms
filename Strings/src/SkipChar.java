@@ -1,7 +1,7 @@
 public class SkipChar {
     public static void main(String[] args) {
 //        String s = skipA("prathamesh");
-        String a = skipApple("applemangoapplebanana");
+        String a = skipApple("bcapplecd");
 //        System.out.println(s);
         System.out.println(a);
     }
