@@ -1,13 +1,26 @@
 public class Main {
-    public static void main(String[] args) {
-        World world = new World();
-        world.start();
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
 
-        HowAreYou howAreYou = new HowAreYou();
-        Thread thread = new Thread(howAreYou);
-        thread.start();
-        while (true){
-            System.out.println(Thread.currentThread().getName() +  " : Hello");
+        IncrementCounter th1 = new IncrementCounter(counter);
+        IncrementCounter th2 = new IncrementCounter(counter);
+
+        th1.start();
+        th2.start();
+
+        try {
+            th1.join();
+            th2.join();
+        }catch (Exception e){
+            throw new InterruptedException(e.getLocalizedMessage());
+        }
+
+        System.out.println(counter.getCount());
+    }
+
+    public static void printName(){
+        for (int i = 0; i < 1000; i++) {
+            System.out.println(Thread.currentThread().getName());
         }
     }
 }
