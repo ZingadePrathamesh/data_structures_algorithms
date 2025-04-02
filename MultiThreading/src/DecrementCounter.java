@@ -1,7 +1,7 @@
-public class IncrementCounter extends Thread{
-    private final Counter counter;
+public class DecrementCounter extends Thread{
+    private Counter counter;
 
-    public IncrementCounter(Counter counter){
+    public DecrementCounter(Counter counter){
         this.counter = counter;
     }
 
@@ -9,7 +9,7 @@ public class IncrementCounter extends Thread{
     public void run() {
         for (int i = 0; i < 10000; i++) {
             System.out.println(Thread.currentThread().getName());
-            counter.increment();
+            counter.decrement();
         }
     }
 }

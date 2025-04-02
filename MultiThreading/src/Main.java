@@ -3,7 +3,7 @@ public class Main {
         Counter counter = new Counter();
 
         IncrementCounter th1 = new IncrementCounter(counter);
-        IncrementCounter th2 = new IncrementCounter(counter);
+        DecrementCounter th2 = new DecrementCounter(counter);
 
         th1.start();
         th2.start();
