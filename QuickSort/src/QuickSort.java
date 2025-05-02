@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class QuickSort {
     public static void main(String[] args) {
-//        int[] nums = {8, 3, 6, 1, 4, 2};
+        int[] nums = {8, 3, 6, 1, 4, 2};
 //        int[] nums2 = {8, 3, 2, 4, 5, 1};
-//        quickSortRevisino(nums, 0, nums.length-1);
+//        quickSort2(nums, 0, nums.length-1);
 //        quickSortRevisino(nums2, 0, nums2.length-1);
 //        System.out.println(Arrays.toString(nums));
 //        System.out.println(Arrays.toString(nums2));
@@ -21,12 +21,14 @@ public class QuickSort {
                 {6, 5, 4, 3, 2, 1},          // Reverse sorted array
                 {5, 3, 8, 3, 2, 5, 7, 5},    // Array with duplicates
                 {1},                         // Single-element array
+                {2,0,2,1,1,0},                         // leetcode array
+                {1,2,0,0},                         // leetcode array
                 {}                           // Empty array
         };
 
         for (int i = 0; i < testCases.length; i++) {
             int[] arr = testCases[i];
-            quickSortRevision(arr, 0, arr.length - 1);
+            quickSort2(arr, 0, arr.length - 1);
             System.out.println("Sorted Array " + (i + 1) + ": " + Arrays.toString(arr));
         }
     }
@@ -82,4 +84,24 @@ public class QuickSort {
         quickSortRevision(nums, s, end);
         quickSortRevision(nums, start, e);
     }
+
+    public static void quickSort2(int[] nums, int start, int end){
+        if(end - start < 1) return;
+        if(nums == null || nums.length == 0) return;
+
+        int m = start + (end - start)/2;
+        int s = start;
+        int e = end;
+        int p =  nums[m];
+
+        while(s <= e){
+            while(nums[s] < p) { s++; }
+            while(nums[e] > p) { e--; }
+            if(s <= e) swap(nums, s++, e--);
+        }
+
+        quickSort2(nums, s, end);
+        quickSort2(nums, start, e);
+    }
+
 }
